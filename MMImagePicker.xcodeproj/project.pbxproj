@@ -22,6 +22,7 @@
 		A21AB63E1F3B02B1004DA5AB /* MMImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB63D1F3B02B1004DA5AB /* MMImagePickerCell.m */; };
 		A21AB6421F3B09B7004DA5AB /* UIColor+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */; };
 		A21AB6451F3B2CC3004DA5AB /* MM_ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */; };
+		A21AB6481F3B3AC3004DA5AB /* MMPreviewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6471F3B3AC3004DA5AB /* MMPreviewImageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MM.m"; sourceTree = "<group>"; };
 		A21AB6431F3B2CC3004DA5AB /* MM_ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MM_ImagePickerViewController.h; sourceTree = "<group>"; };
 		A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MM_ImagePickerViewController.m; sourceTree = "<group>"; };
+		A21AB6461F3B3AC3004DA5AB /* MMPreviewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPreviewImageCell.h; sourceTree = "<group>"; };
+		A21AB6471F3B3AC3004DA5AB /* MMPreviewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPreviewImageCell.m; sourceTree = "<group>"; };
 		AA2E3F10BE8D3AADF6B9B12C /* Pods-MMImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMImagePicker/Pods-MMImagePicker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +135,8 @@
 				A21AB6381F3AD9E2004DA5AB /* AssetHelper.m */,
 				A21AB63C1F3B02B1004DA5AB /* MMImagePickerCell.h */,
 				A21AB63D1F3B02B1004DA5AB /* MMImagePickerCell.m */,
+				A21AB6461F3B3AC3004DA5AB /* MMPreviewImageCell.h */,
+				A21AB6471F3B3AC3004DA5AB /* MMPreviewImageCell.m */,
 				A21AB6431F3B2CC3004DA5AB /* MM_ImagePickerViewController.h */,
 				A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */,
 			);
@@ -286,6 +291,7 @@
 				A21AB6391F3AD9E2004DA5AB /* AssetHelper.m in Sources */,
 				A21AB62F1F3AB99A004DA5AB /* MM_PictureCell.m in Sources */,
 				A21AB6361F3AD6F4004DA5AB /* ALAsset+MMIPC.m in Sources */,
+				A21AB6481F3B3AC3004DA5AB /* MMPreviewImageCell.m in Sources */,
 				A21AB61A1F3AB65D004DA5AB /* ViewController.m in Sources */,
 				A21AB6171F3AB65D004DA5AB /* AppDelegate.m in Sources */,
 				A21AB6141F3AB65D004DA5AB /* main.m in Sources */,
