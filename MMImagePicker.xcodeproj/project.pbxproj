@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DF772B49BB060ACB66457A0 /* Pods_MMImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04292A5E80CB5769E618D771 /* Pods_MMImagePicker.framework */; };
 		A21AB6141F3AB65D004DA5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6131F3AB65D004DA5AB /* main.m */; };
 		A21AB6171F3AB65D004DA5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6161F3AB65D004DA5AB /* AppDelegate.m */; };
 		A21AB61A1F3AB65D004DA5AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6191F3AB65D004DA5AB /* ViewController.m */; };
 		A21AB61D1F3AB65D004DA5AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21AB61B1F3AB65D004DA5AB /* Main.storyboard */; };
 		A21AB61F1F3AB65D004DA5AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21AB61E1F3AB65D004DA5AB /* Assets.xcassets */; };
 		A21AB6221F3AB65D004DA5AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21AB6201F3AB65D004DA5AB /* LaunchScreen.storyboard */; };
+		A21AB62F1F3AB99A004DA5AB /* MM_PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB62E1F3AB99A004DA5AB /* MM_PictureCell.m */; };
+		A21AB6321F3AD674004DA5AB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21AB6311F3AD674004DA5AB /* AssetsLibrary.framework */; };
+		A21AB6361F3AD6F4004DA5AB /* ALAsset+MMIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6351F3AD6F4004DA5AB /* ALAsset+MMIPC.m */; };
+		A21AB6391F3AD9E2004DA5AB /* AssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6381F3AD9E2004DA5AB /* AssetHelper.m */; };
+		A21AB63B1F3AE2F3004DA5AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21AB63A1F3AE2F3004DA5AB /* UIKit.framework */; };
+		A21AB63E1F3B02B1004DA5AB /* MMImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB63D1F3B02B1004DA5AB /* MMImagePickerCell.m */; };
+		A21AB6421F3B09B7004DA5AB /* UIColor+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */; };
+		A21AB6451F3B2CC3004DA5AB /* MM_ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04292A5E80CB5769E618D771 /* Pods_MMImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC4C15AC5E5DD05844A6B0A /* Pods-MMImagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMImagePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMImagePicker/Pods-MMImagePicker.debug.xcconfig"; sourceTree = "<group>"; };
 		A21AB60F1F3AB65D004DA5AB /* MMImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21AB6131F3AB65D004DA5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A21AB6151F3AB65D004DA5AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +37,21 @@
 		A21AB61E1F3AB65D004DA5AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A21AB6211F3AB65D004DA5AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A21AB6231F3AB65D004DA5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21AB62D1F3AB99A004DA5AB /* MM_PictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MM_PictureCell.h; sourceTree = "<group>"; };
+		A21AB62E1F3AB99A004DA5AB /* MM_PictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MM_PictureCell.m; sourceTree = "<group>"; };
+		A21AB6311F3AD674004DA5AB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		A21AB6341F3AD6F4004DA5AB /* ALAsset+MMIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+MMIPC.h"; sourceTree = "<group>"; };
+		A21AB6351F3AD6F4004DA5AB /* ALAsset+MMIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+MMIPC.m"; sourceTree = "<group>"; };
+		A21AB6371F3AD9E2004DA5AB /* AssetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetHelper.h; sourceTree = "<group>"; };
+		A21AB6381F3AD9E2004DA5AB /* AssetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetHelper.m; sourceTree = "<group>"; };
+		A21AB63A1F3AE2F3004DA5AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A21AB63C1F3B02B1004DA5AB /* MMImagePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMImagePickerCell.h; sourceTree = "<group>"; };
+		A21AB63D1F3B02B1004DA5AB /* MMImagePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMImagePickerCell.m; sourceTree = "<group>"; };
+		A21AB6401F3B09B7004DA5AB /* UIColor+MM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MM.h"; sourceTree = "<group>"; };
+		A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MM.m"; sourceTree = "<group>"; };
+		A21AB6431F3B2CC3004DA5AB /* MM_ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MM_ImagePickerViewController.h; sourceTree = "<group>"; };
+		A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MM_ImagePickerViewController.m; sourceTree = "<group>"; };
+		AA2E3F10BE8D3AADF6B9B12C /* Pods-MMImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMImagePicker/Pods-MMImagePicker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +59,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21AB63B1F3AE2F3004DA5AB /* UIKit.framework in Frameworks */,
+				A21AB6321F3AD674004DA5AB /* AssetsLibrary.framework in Frameworks */,
+				9DF772B49BB060ACB66457A0 /* Pods_MMImagePicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		341E62F39C0CBFB6B1E1EE98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DC4C15AC5E5DD05844A6B0A /* Pods-MMImagePicker.debug.xcconfig */,
+				AA2E3F10BE8D3AADF6B9B12C /* Pods-MMImagePicker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A21AB6061F3AB65D004DA5AB = {
 			isa = PBXGroup;
 			children = (
 				A21AB6111F3AB65D004DA5AB /* MMImagePicker */,
 				A21AB6101F3AB65D004DA5AB /* Products */,
+				A21AB6301F3AD674004DA5AB /* Frameworks */,
+				341E62F39C0CBFB6B1E1EE98 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +98,8 @@
 		A21AB6111F3AB65D004DA5AB /* MMImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				A21AB63F1F3B0999004DA5AB /* Categories */,
+				A21AB6291F3AB956004DA5AB /* ImagePicker */,
 				A21AB6151F3AB65D004DA5AB /* AppDelegate.h */,
 				A21AB6161F3AB65D004DA5AB /* AppDelegate.m */,
 				A21AB6181F3AB65D004DA5AB /* ViewController.h */,
@@ -79,6 +121,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A21AB6291F3AB956004DA5AB /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A21AB62D1F3AB99A004DA5AB /* MM_PictureCell.h */,
+				A21AB62E1F3AB99A004DA5AB /* MM_PictureCell.m */,
+				A21AB6341F3AD6F4004DA5AB /* ALAsset+MMIPC.h */,
+				A21AB6351F3AD6F4004DA5AB /* ALAsset+MMIPC.m */,
+				A21AB6371F3AD9E2004DA5AB /* AssetHelper.h */,
+				A21AB6381F3AD9E2004DA5AB /* AssetHelper.m */,
+				A21AB63C1F3B02B1004DA5AB /* MMImagePickerCell.h */,
+				A21AB63D1F3B02B1004DA5AB /* MMImagePickerCell.m */,
+				A21AB6431F3B2CC3004DA5AB /* MM_ImagePickerViewController.h */,
+				A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		A21AB6301F3AD674004DA5AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A21AB63A1F3AE2F3004DA5AB /* UIKit.framework */,
+				A21AB6311F3AD674004DA5AB /* AssetsLibrary.framework */,
+				04292A5E80CB5769E618D771 /* Pods_MMImagePicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A21AB63F1F3B0999004DA5AB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A21AB6401F3B09B7004DA5AB /* UIColor+MM.h */,
+				A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A21AB6261F3AB65D004DA5AB /* Build configuration list for PBXNativeTarget "MMImagePicker" */;
 			buildPhases = (
+				F48DB94A40A90B2A6614BDC1 /* [CP] Check Pods Manifest.lock */,
 				A21AB60B1F3AB65D004DA5AB /* Sources */,
 				A21AB60C1F3AB65D004DA5AB /* Frameworks */,
 				A21AB60D1F3AB65D004DA5AB /* Resources */,
+				E323E1BE4BDF13B794DDCC2C /* [CP] Embed Pods Frameworks */,
+				97C8D6DAE129004E4BDD1D61 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -110,6 +191,7 @@
 				TargetAttributes = {
 					A21AB60E1F3AB65D004DA5AB = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = WKQV5DN8XZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -145,11 +227,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		97C8D6DAE129004E4BDD1D61 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMImagePicker/Pods-MMImagePicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E323E1BE4BDF13B794DDCC2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMImagePicker/Pods-MMImagePicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F48DB94A40A90B2A6614BDC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A21AB60B1F3AB65D004DA5AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21AB63E1F3B02B1004DA5AB /* MMImagePickerCell.m in Sources */,
+				A21AB6451F3B2CC3004DA5AB /* MM_ImagePickerViewController.m in Sources */,
+				A21AB6421F3B09B7004DA5AB /* UIColor+MM.m in Sources */,
+				A21AB6391F3AD9E2004DA5AB /* AssetHelper.m in Sources */,
+				A21AB62F1F3AB99A004DA5AB /* MM_PictureCell.m in Sources */,
+				A21AB6361F3AD6F4004DA5AB /* ALAsset+MMIPC.m in Sources */,
 				A21AB61A1F3AB65D004DA5AB /* ViewController.m in Sources */,
 				A21AB6171F3AB65D004DA5AB /* AppDelegate.m in Sources */,
 				A21AB6141F3AB65D004DA5AB /* main.m in Sources */,
@@ -270,23 +406,33 @@
 		};
 		A21AB6271F3AB65D004DA5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DC4C15AC5E5DD05844A6B0A /* Pods-MMImagePicker.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WKQV5DN8XZ;
 				INFOPLIST_FILE = MMImagePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mosquito.MMImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
 		A21AB6281F3AB65D004DA5AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA2E3F10BE8D3AADF6B9B12C /* Pods-MMImagePicker.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WKQV5DN8XZ;
 				INFOPLIST_FILE = MMImagePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mosquito.MMImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
@@ -309,6 +455,7 @@
 				A21AB6281F3AB65D004DA5AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
