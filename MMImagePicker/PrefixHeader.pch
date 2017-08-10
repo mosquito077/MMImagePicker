@@ -1,0 +1,29 @@
+//
+//  PrefixHeader.pch
+//  MMImagePicker
+//
+//  Created by mosquito on 2017/8/10.
+//  Copyright © 2017年 mosquito. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIColor+MM.h"
+#import "YHAssistant.h"
+#import <Masonry.h>
+#import <ImageIO/ImageIO.h>
+#import <POP+MCAnimate/POP+MCAnimate.h>
+
+
+#define kScreenWidth        [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight       [UIScreen mainScreen].bounds.size.height
+#define kNavigationBarHeight    44.f
+#define KContentUIEdgeInsets (kScreenWidth + KNavigationBarHeight/2)
+
+#define WS(weakSelf)    __weak __typeof(&*self)weakSelf = self
+
+#endif /* PrefixHeader_pch */

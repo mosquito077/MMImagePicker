@@ -5,8 +5,6 @@
 //  Created by mosquito on 2017/8/9.
 //  Copyright © 2017年 mosquito. All rights reserved.
 //
-#define WS(weakSelf)    __weak __typeof(&*self)weakSelf = self
-
 #import "AssetHelper.h"
 
 @implementation AssetHelper
@@ -34,7 +32,7 @@
                 
             default: {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                                    message:@"请打开设置->隐私->照片，开启相册访问权限。"
+                                                                    message:@"请打开设置，开启相册访问权限。"
                                                                    delegate:self
                                                           cancelButtonTitle:@"确定"
                                                           otherButtonTitles:nil];
@@ -126,23 +124,17 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        
         WS(weakSelf);
         void (^asserGroupEnumerator)(ALAssetsGroup *, BOOL *) = ^(ALAssetsGroup *group, BOOL *stop) {
-            
             if ([[group valueForProperty:ALAssetsGroupPropertyType] intValue] == ALAssetsGroupSavedPhotos) {
                 [group setAssetsFilter:[ALAssetsFilter allPhotos]];
-                
                 [group enumerateAssetsUsingBlock:^(ALAsset *alPhoto, NSUInteger index, BOOL *stop) {
-                    
                     if(alPhoto == nil) {
                         if (weakSelf.bReverse)
                             weakSelf.assetPhotos = [[NSMutableArray alloc] initWithArray:[[weakSelf.assetPhotos reverseObjectEnumerator] allObjects]];
-                        
                         result(weakSelf.assetPhotos);
                         return;
                     }
-                    
                     [weakSelf.assetPhotos addObject:alPhoto];
                 }];
             }
@@ -193,7 +185,9 @@
             
             CGImageRef iref = [rep fullResolutionImage];
             if (iref) {
-                iImage = [UIImage imageWithCGImage:iref scale:1.0 orientation:(UIImageOrientation)rep.orientation];
+                iImage = [UIImage imageWithCGImage:iref
+                                             scale:1.0
+                                       orientation:(UIImageOrientation)rep.orientation];
             } else {
                 iImage = nil;
             }
@@ -217,7 +211,9 @@
                 image = [filter outputImage];
             }
             
-            iImage = [UIImage imageWithCIImage:image scale:1.0 orientation:(UIImageOrientation)rep.orientation];
+            iImage = [UIImage imageWithCIImage:image
+                                         scale:1.0
+                                   orientation:(UIImageOrientation)rep.orientation];
         }
         
         bBusy = NO;
@@ -332,7 +328,7 @@
         UIGraphicsBeginImageContext(asize);
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
-        UIRectFill(CGRectMake(0, 0, asize.width, asize.height));//clear background
+        UIRectFill(CGRectMake(0, 0, asize.width, asize.height));     //clear background
         [image drawInRect:rect];
         newimage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();

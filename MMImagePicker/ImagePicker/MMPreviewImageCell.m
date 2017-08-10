@@ -8,9 +8,6 @@
 
 #import "MMPreviewImageCell.h"
 
-#define kScreenWidth        [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight       [UIScreen mainScreen].bounds.size.height
-
 @interface MMPreviewImageCell ()
 
 @property (assign, nonatomic) CGFloat lastScale;

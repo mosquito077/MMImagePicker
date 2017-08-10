@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface MMImagePickerCell : UICollectionViewCell
 
@@ -19,5 +20,13 @@
 @property (readonly, nonatomic) BOOL isMarked;
 
 - (void)showSelected:(BOOL)selected animated:(BOOL)animated;
+
+@end
+
+@interface ALAssetsGroup (YOHO)
+
+- (UIImage *)getFirstPhotoImage;
+
+- (UIImage *)getFirstVideoImage;
 
 @end

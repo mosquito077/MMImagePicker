@@ -13,6 +13,7 @@
 @property (copy, nonatomic) void (^tapAddPictureBlock)(void);
 @property (copy, nonatomic) void (^tapPictureInfoBlock)(NSInteger);
 @property (copy, nonatomic) void (^tapDeletePictureBlock)(NSInteger);
+@property (strong, nonatomic) UILabel *infoLabel;
 
 @property (nonatomic) NSInteger maxSelectNum;   // Default is 9
 
