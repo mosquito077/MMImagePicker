@@ -18,7 +18,6 @@ static CGFloat const kImageButtonTag = 1200;
 
 @property (nonatomic, assign) CGFloat imageViewSize;
 @property (nonatomic, strong) UIView *lineView;
-@property (nonatomic, assign) NSInteger buttonTag;
 
 @end
 
@@ -95,19 +94,21 @@ static CGFloat const kImageButtonTag = 1200;
     }
     
     UIButton *button = nil;
-    UIImageView *deleteView = nil;
+    MMImageView *deleteView = nil;
     for (int i=0; i<total; i++) {
         button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = kImageButtonTag+i;
         button.contentMode = UIViewContentModeScaleAspectFill;
         button.clipsToBounds = YES;
-        _buttonTag = i-1;
         
         //刪除icon
-        deleteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"delete"]];
-        deleteView.userInteractionEnabled = YES;
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-        [deleteView addGestureRecognizer:singleTap];
+        deleteView = [[MMImageView alloc] initWithImage:[UIImage imageNamed:@"delete"]];
+        WS(weakSelf);
+        deleteView.enableTapAction = YES;
+        deleteView.imageTapBlock = ^(void) {
+            NSInteger num = button.tag - kImageButtonTag;
+            !weakSelf.tapDeletePictureBlock ?: weakSelf.tapDeletePictureBlock(num);
+        };
         
         BOOL isShowDelete = YES;
         if (i == total-1 && array.count != self.maxSelectNum) {
@@ -138,11 +139,6 @@ static CGFloat const kImageButtonTag = 1200;
             [self.infoLabel removeFromSuperview];
         }
     }
-}
-
-- (void)handleSingleTap:(UIGestureRecognizer *)recognizer {
-    WS(weakSelf);
-    !weakSelf.tapDeletePictureBlock ?: weakSelf.tapDeletePictureBlock(_buttonTag);
 }
 
 + (CGFloat)heightForPictureCell:(NSArray *)array {

@@ -135,8 +135,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - YHImagePickerControllerDelegate
-- (void)didSelectPhotosFromYHImagePickerController:(MM_ImagePickerViewController *)picker
+#pragma mark - MMImagePickerControllerDelegate
+- (void)didSelectPhotosFromMMImagePickerController:(MM_ImagePickerViewController *)picker
                                             result:(NSArray *)indexArray
                                           metaData:(NSArray<YH_PhotoInfo*> *)metaData
                                             finish:(BOOL)flag {
@@ -157,13 +157,10 @@
     [self.picsArray addObjectsFromArray:array];
     [self.originPicsArray addObjectsFromArray:array];
     
-//    self.commetModel.imageArray = self.picsArray;
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.mainTableView reloadData];
     });
 }
-
 
 
 @end

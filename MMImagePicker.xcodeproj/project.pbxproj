@@ -15,16 +15,17 @@
 		A21AB61F1F3AB65D004DA5AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21AB61E1F3AB65D004DA5AB /* Assets.xcassets */; };
 		A21AB6221F3AB65D004DA5AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21AB6201F3AB65D004DA5AB /* LaunchScreen.storyboard */; };
 		A21AB62F1F3AB99A004DA5AB /* MM_PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB62E1F3AB99A004DA5AB /* MM_PictureCell.m */; };
-		A21AB6321F3AD674004DA5AB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21AB6311F3AD674004DA5AB /* AssetsLibrary.framework */; };
 		A21AB6361F3AD6F4004DA5AB /* ALAsset+MMIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6351F3AD6F4004DA5AB /* ALAsset+MMIPC.m */; };
 		A21AB6391F3AD9E2004DA5AB /* AssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6381F3AD9E2004DA5AB /* AssetHelper.m */; };
-		A21AB63B1F3AE2F3004DA5AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21AB63A1F3AE2F3004DA5AB /* UIKit.framework */; };
 		A21AB63E1F3B02B1004DA5AB /* MMImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB63D1F3B02B1004DA5AB /* MMImagePickerCell.m */; };
 		A21AB6421F3B09B7004DA5AB /* UIColor+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */; };
 		A21AB6451F3B2CC3004DA5AB /* MM_ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */; };
 		A21AB6481F3B3AC3004DA5AB /* MMPreviewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6471F3B3AC3004DA5AB /* MMPreviewImageCell.m */; };
+		A26717261F3D832C0088204C /* MMImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A26717251F3D832C0088204C /* MMImageView.m */; };
+		A26717281F3D87590088204C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26717271F3D87590088204C /* Accelerate.framework */; };
+		A267172B1F3D89370088204C /* NSString+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A267172A1F3D89370088204C /* NSString+MM.m */; };
+		A267172E1F3DA59A0088204C /* MMAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = A267172D1F3DA59A0088204C /* MMAssistant.m */; };
 		A2EE03E91F3BF1890004C78D /* YH_PhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE03E81F3BF1890004C78D /* YH_PhotoInfo.m */; };
-		A2EE03ED1F3BF6750004C78D /* YHAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE03EC1F3BF6750004C78D /* YHAssistant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,10 +57,15 @@
 		A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MM_ImagePickerViewController.m; path = ImagePicker/MM_ImagePickerViewController.m; sourceTree = "<group>"; };
 		A21AB6461F3B3AC3004DA5AB /* MMPreviewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPreviewImageCell.h; sourceTree = "<group>"; };
 		A21AB6471F3B3AC3004DA5AB /* MMPreviewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPreviewImageCell.m; sourceTree = "<group>"; };
+		A26717241F3D832C0088204C /* MMImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMImageView.h; sourceTree = "<group>"; };
+		A26717251F3D832C0088204C /* MMImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMImageView.m; sourceTree = "<group>"; };
+		A26717271F3D87590088204C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A26717291F3D89370088204C /* NSString+MM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MM.h"; sourceTree = "<group>"; };
+		A267172A1F3D89370088204C /* NSString+MM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MM.m"; sourceTree = "<group>"; };
+		A267172C1F3DA59A0088204C /* MMAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAssistant.h; sourceTree = "<group>"; };
+		A267172D1F3DA59A0088204C /* MMAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAssistant.m; sourceTree = "<group>"; };
 		A2EE03E71F3BF1890004C78D /* YH_PhotoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YH_PhotoInfo.h; sourceTree = "<group>"; };
 		A2EE03E81F3BF1890004C78D /* YH_PhotoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YH_PhotoInfo.m; sourceTree = "<group>"; };
-		A2EE03EB1F3BF6750004C78D /* YHAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHAssistant.h; sourceTree = "<group>"; };
-		A2EE03EC1F3BF6750004C78D /* YHAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHAssistant.m; sourceTree = "<group>"; };
 		A2EE03EE1F3C0E350004C78D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AA2E3F10BE8D3AADF6B9B12C /* Pods-MMImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMImagePicker/Pods-MMImagePicker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,8 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21AB63B1F3AE2F3004DA5AB /* UIKit.framework in Frameworks */,
-				A21AB6321F3AD674004DA5AB /* AssetsLibrary.framework in Frameworks */,
+				A26717281F3D87590088204C /* Accelerate.framework in Frameworks */,
 				106BE8F42074D6D26C78D34C /* libPods-MMImagePicker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +161,7 @@
 		A21AB6301F3AD674004DA5AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A26717271F3D87590088204C /* Accelerate.framework */,
 				A21AB63A1F3AE2F3004DA5AB /* UIKit.framework */,
 				A21AB6311F3AD674004DA5AB /* AssetsLibrary.framework */,
 				15D65069BC6653803D30A747 /* libPods-MMImagePicker.a */,
@@ -168,8 +174,12 @@
 			children = (
 				A21AB6401F3B09B7004DA5AB /* UIColor+MM.h */,
 				A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */,
-				A2EE03EB1F3BF6750004C78D /* YHAssistant.h */,
-				A2EE03EC1F3BF6750004C78D /* YHAssistant.m */,
+				A26717291F3D89370088204C /* NSString+MM.h */,
+				A267172A1F3D89370088204C /* NSString+MM.m */,
+				A26717241F3D832C0088204C /* MMImageView.h */,
+				A26717251F3D832C0088204C /* MMImageView.m */,
+				A267172C1F3DA59A0088204C /* MMAssistant.h */,
+				A267172D1F3DA59A0088204C /* MMAssistant.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -300,9 +310,11 @@
 				A21AB63E1F3B02B1004DA5AB /* MMImagePickerCell.m in Sources */,
 				A21AB6451F3B2CC3004DA5AB /* MM_ImagePickerViewController.m in Sources */,
 				A21AB6421F3B09B7004DA5AB /* UIColor+MM.m in Sources */,
-				A2EE03ED1F3BF6750004C78D /* YHAssistant.m in Sources */,
+				A26717261F3D832C0088204C /* MMImageView.m in Sources */,
 				A21AB6391F3AD9E2004DA5AB /* AssetHelper.m in Sources */,
+				A267172E1F3DA59A0088204C /* MMAssistant.m in Sources */,
 				A21AB62F1F3AB99A004DA5AB /* MM_PictureCell.m in Sources */,
+				A267172B1F3D89370088204C /* NSString+MM.m in Sources */,
 				A21AB6361F3AD6F4004DA5AB /* ALAsset+MMIPC.m in Sources */,
 				A2EE03E91F3BF1890004C78D /* YH_PhotoInfo.m in Sources */,
 				A21AB6481F3B3AC3004DA5AB /* MMPreviewImageCell.m in Sources */,

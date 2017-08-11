@@ -11,17 +11,16 @@
 #import "MMImagePickerCell.h"
 #import "MMPreviewImageCell.h"
 
-#define kTagAlbumCover             123121
-#define kTagAlbumNameLabel         213211
-#define kTagAlbumPhotoCountLabel   3234232
+#define kTagAlbumImageCover        120000
+#define kTagAlbumNameLabel         210000
+#define kTagAlbumPhotoCountLabel   320000
+#define kAlbumImageWidthAndHeight  70.f
 
 @interface YH_AlbumTableViewCell()
 
 @property (strong, nonatomic) UILabel *albumName;
 @property (strong, nonatomic) UILabel *albumPhotoCount;
-@property (strong, nonatomic) UIImageView *albumCover;
-@property (strong, nonatomic) UIImageView *accessoryImageView;
-@property (strong, nonatomic) UIView *lineView;
+@property (strong, nonatomic) UIImageView *albumImage;
 
 @end
 
@@ -39,26 +38,20 @@
 - (void)initView {
     
     self.selectionStyle = UITableViewCellSelectionStyleGray;
-    self.albumCover = [[UIImageView alloc] initWithFrame:CGRectZero];
-    self.albumCover.tag = kTagAlbumCover;
-    [self.contentView addSubview:self.albumCover];
+    self.albumImage = [[UIImageView alloc] initWithFrame:CGRectZero];
+    self.albumImage.tag = kTagAlbumImageCover;
+    [self.contentView addSubview:self.albumImage];
     
     self.albumName = [[UILabel alloc] initWithFrame:CGRectZero];
     self.albumName.font = [UIFont systemFontOfSize:14.0f];
     self.albumName.tag = kTagAlbumNameLabel;
-    self.albumName.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:self.albumName];
     
     self.albumPhotoCount = [[UILabel alloc] initWithFrame:CGRectZero];
     self.albumPhotoCount.tag = kTagAlbumPhotoCountLabel;
-    self.albumPhotoCount.backgroundColor = [UIColor clearColor];
     self.albumPhotoCount.font = [UIFont systemFontOfSize:12.0f];
     self.albumPhotoCount.textAlignment = NSTextAlignmentLeft;
     [self.contentView addSubview:self.albumPhotoCount];
-    
-    self.accessoryImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    self.accessoryImageView.image = [UIImage imageNamed:@"import_link_arrowl"];
-    [self.contentView addSubview:self.accessoryImageView];
     
     self.backgroundColor = [UIColor whiteColor];
 }
@@ -67,20 +60,19 @@
     
     [super layoutSubviews];
     
-    self.albumCover.frame = CGRectMake(10.0f, (CGRectGetHeight(self.contentView.frame) - 70.0f) /2, 70.0f, 70.0f);
+    self.albumImage.frame = CGRectMake(10.0f, (CGRectGetHeight(self.contentView.frame) - kAlbumImageWidthAndHeight) /2, kAlbumImageWidthAndHeight, kAlbumImageWidthAndHeight);
     self.albumName.frame = CGRectMake(94.0f, 30.0f, kScreenWidth/2, 15.0f);
     self.albumPhotoCount.frame = CGRectMake(94.0f, CGRectGetMaxY(self.albumName.frame)+5, 85.0f, 10.0f);
-    self.accessoryImageView.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) - 40.0f, (CGRectGetHeight(self.contentView.frame) - 25.0f)/2 - 1.0f, 25.0f, 25.0f);
 }
 
 - (void)updateCellContent:(UIImage*)albumCoverImage albumName:(NSString*)albumName albumPhotoCount:(NSInteger)albumPhotoCount {
     
-    self.albumCover.image = albumCoverImage;
+    self.albumImage.image = albumCoverImage;
     self.albumName.text = albumName;
     self.albumPhotoCount.text = [NSString stringWithFormat:@"%ld",(long)albumPhotoCount];
 }
 
-- (NSString*)getAlbumNameText {
+- (NSString *)getAlbumNameText {
     return self.albumName.text;
 }
 
@@ -96,10 +88,10 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
 @interface MM_ImagePickerViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 // picker view
+@property (assign, nonatomic) BOOL isOpenAlbum;
 @property (strong, nonatomic) UIView *titleView;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UIButton *selectAlbumButton;
-@property (assign, nonatomic) BOOL isOpenAlbum;
 @property (strong, nonatomic) UIButton *backButton;
 @property (strong, nonatomic) UIButton *cancelButton;
 @property (strong, nonatomic) UIButton *selectButton;
@@ -111,26 +103,23 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
 @property (strong, nonatomic) UIToolbar *toolBarView;
 
 // preview view
-@property (strong, nonatomic) UICollectionView *previewCollectionView;
 @property (assign, nonatomic) BOOL previewMode;
+@property (strong, nonatomic) UICollectionView *previewCollectionView;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
 @property (assign, nonatomic) UIStatusBarStyle previousStatueBarStyle;
 @property (assign, nonatomic) UIBarStyle previousNavigationBarStyle;
 @property (assign, nonatomic) UIBarStyle previousToolBarStyle;
 
 // select photos
+@property (assign, nonatomic) BOOL isSelected;
 @property (strong, nonatomic) NSMutableDictionary <NSString*, ALAsset*>*selectedAssets;
-
 @property (strong, nonatomic) NSIndexPath *lastAccessed;
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
-@property (assign, nonatomic) BOOL isSelected;
 @property (strong, nonatomic) NSIndexPath *lastClicked;      //最后点击的图片的indexpath
 @property (assign, nonatomic) NSInteger nowNum;
-@property (assign, nonatomic) CGFloat cellWidth;
 
-//albumtableview
+//albumTableview
 @property (strong, nonatomic) UITableView *tableView;
-
 @property (strong, nonatomic) NSIndexPath *selectAlbumIndex;    //选中相册的indexpath值
 @property (strong, nonatomic) NSMutableArray<ALAsset*> *previewAssetsArray;
 @property (strong, nonatomic) NSMutableArray <YH_PhotoInfo*> *photoInfoArray;
@@ -154,7 +143,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
     self = [super init];
     if (self) {
         self.view.backgroundColor = [UIColor whiteColor];
-        self.nMaxCount = YH_NO_LIMIT_SELECT;
+        self.nMaxCount = 9;
         self.nInitCount = 0;
         self.nColumnCount = 3;
         self.nResultType = YH_PICKER_RESULT_UIIMAGE;
@@ -263,7 +252,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
     return _tableView;
 }
 
-- (NSMutableDictionary*)selectedAssets {
+- (NSMutableDictionary *)selectedAssets {
     if (!_selectedAssets) {
         _selectedAssets = [[NSMutableDictionary alloc] initWithCapacity:0];
     }
@@ -293,12 +282,15 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
 - (UIButton *)selectAlbumButton {
     if (! _selectAlbumButton) {
         _selectAlbumButton = [[UIButton alloc] init];
-        UIImage *image = [UIImage imageNamed:@"triangle_ic"];
-        _selectAlbumButton.frame = CGRectMake(CGRectGetMaxX(self.titleLabel.frame)+10, (kNavigationBarHeight-image.size.height)/2, image.size.width, image.size.height);
         _selectAlbumButton.backgroundColor = [UIColor clearColor];
         [_selectAlbumButton setExclusiveTouch:YES];
-        [_selectAlbumButton setImage:image forState:UIControlStateNormal];
-        [_selectAlbumButton setImage:[UIImage imageNamed:@"triangle_up"] forState:UIControlStateSelected];
+
+        UIImage *imageDown = [UIImage imageNamed:@"triangle_ic"];
+        UIImage *imageUp = [UIImage imageNamed:@"triangle_ic_up"];
+        
+        _selectAlbumButton.frame = CGRectMake(CGRectGetMaxX(self.titleLabel.frame)+10, (kNavigationBarHeight-imageDown.size.height)/2, imageDown.size.width, imageDown.size.height);
+        [_selectAlbumButton setImage:imageDown forState:UIControlStateNormal];
+        [_selectAlbumButton setImage:imageUp forState:UIControlStateSelected];
     }
     return _selectAlbumButton;
 }
@@ -359,7 +351,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
     if (!_previewCollectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        _previewCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(kScreenWidth+15.f, 0, kScreenWidth+15.f*2, kScreenHeight) collectionViewLayout:flowLayout];
+        _previewCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(kScreenWidth+30.f, 0, kScreenWidth+30.f*2, kScreenHeight) collectionViewLayout:flowLayout];
         _previewCollectionView.backgroundColor = [UIColor whiteColor];
         _previewCollectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _previewCollectionView.dataSource = self;
@@ -687,8 +679,8 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
         [self updateCollectionViewLayout];
         [self updateCountLabel];
     } else {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(didCancelYHImagePickerController:)]) {
-            [self.delegate didCancelYHImagePickerController:self];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didCancelMMImagePickerController:)]) {
+            [self.delegate didCancelMMImagePickerController:self];
         }
         
         [self back:YES];
@@ -740,12 +732,12 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
 }
 
 - (void)handleTapChooseButton:(id)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectPhotosFromYHImagePickerController:result:finish:)]) {
-        [self.delegate didSelectPhotosFromYHImagePickerController:self
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectPhotosFromMMImagePickerController:result:finish:)]) {
+        [self.delegate didSelectPhotosFromMMImagePickerController:self
                                                            result:[self.photoInfoArray valueForKeyPath:@"asset"]
                                                            finish:YES];
-    } else if ([self.delegate respondsToSelector:@selector(didSelectPhotosFromYHImagePickerController:result:metaData:finish:)]) {
-        [self.delegate didSelectPhotosFromYHImagePickerController:self
+    } else if ([self.delegate respondsToSelector:@selector(didSelectPhotosFromMMImagePickerController:result:metaData:finish:)]) {
+        [self.delegate didSelectPhotosFromMMImagePickerController:self
                                                            result:[self.photoInfoArray valueForKeyPath:@"asset"]
                                                          metaData:self.photoInfoArray
                                                            finish:YES];
@@ -869,7 +861,6 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
         return CGSizeMake(kScreenWidth, self.previewCollectionView.frame.size.height);
     } else {
         CGFloat width = floorf((kScreenWidth - kImagePickerCellSpace*(self.nColumnCount-1)-kImagePickerLeftSpace*2)/self.nColumnCount);
-        self.cellWidth = width;
         return CGSizeMake(width, width);
     }
 }
@@ -996,12 +987,12 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                                            YH_PhotoInfo *pInfo = [weakSelf.photoInfoArray lastObject];
                                            pInfo.asset = asset;
                                            
-                                           if ([weakSelf.delegate respondsToSelector:@selector(didSelectPhotosFromYHImagePickerController:result:finish:)]) {
-                                               [self.delegate didSelectPhotosFromYHImagePickerController:weakSelf
+                                           if ([weakSelf.delegate respondsToSelector:@selector(didSelectPhotosFromMMImagePickerController:result:finish:)]) {
+                                               [self.delegate didSelectPhotosFromMMImagePickerController:weakSelf
                                                                                                   result:[weakSelf.photoInfoArray valueForKeyPath:@"asset"]
                                                                                                   finish:YES];
-                                           } else if ([weakSelf.delegate respondsToSelector:@selector(didSelectPhotosFromYHImagePickerController:result:metaData:finish:)]) {
-                                               [weakSelf.delegate didSelectPhotosFromYHImagePickerController:weakSelf
+                                           } else if ([weakSelf.delegate respondsToSelector:@selector(didSelectPhotosFromMMImagePickerController:result:metaData:finish:)]) {
+                                               [weakSelf.delegate didSelectPhotosFromMMImagePickerController:weakSelf
                                                                                                       result:[weakSelf.photoInfoArray valueForKeyPath:@"asset"]
                                                                                                     metaData:weakSelf.photoInfoArray
                                                                                                       finish:YES];

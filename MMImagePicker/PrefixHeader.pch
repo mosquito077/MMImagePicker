@@ -13,17 +13,54 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "UIColor+MM.h"
-#import "YHAssistant.h"
+#import "NSString+MM.h"
+#import "MMAssistant.h"
+#import "MMImageView.h"
+
 #import <Masonry.h>
+#import <YYKit/YYKit.h>
 #import <ImageIO/ImageIO.h>
 #import <POP+MCAnimate/POP+MCAnimate.h>
 
-
-#define kScreenWidth        [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight       [UIScreen mainScreen].bounds.size.height
 #define kNavigationBarHeight    44.f
-#define KContentUIEdgeInsets (kScreenWidth + KNavigationBarHeight/2)
+#define KContentUIEdgeInsets    (kScreenWidth + KNavigationBarHeight/2)
 
-#define WS(weakSelf)    __weak __typeof(&*self)weakSelf = self
+#define WS(weakSelf)             __weak __typeof(&*self)weakSelf = self
+
+#define kScreenIs4InchRetina        (([UIScreen mainScreen].scale == 2.0f) && ([UIScreen mainScreen].bounds.size.height == 568.0f))
+
+#define kUserInterfaceIdiomIsPhone  (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define kUserInterfaceIdiomIsPad    (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+#define IS_IPHONE_4_OR_LESS         (kUserInterfaceIdiomIsPhone && kScreenHeight < 568.0)
+#define IS_IPHONE_5_OR_LESS         (kUserInterfaceIdiomIsPhone && kScreenHeight <= 568.0)
+#define IS_IPHONE_5                 (kUserInterfaceIdiomIsPhone && kScreenHeight == 568.0)
+#define IS_IPHONE_6                 (kUserInterfaceIdiomIsPhone && kScreenHeight == 667.0)
+#define IS_IPHONE_6P                (kUserInterfaceIdiomIsPhone && kScreenHeight == 736.0)
+
+// 定义一个函数宏，能够根据机型返回对应的变量
+#define \
+CGFLOAT_FOR_DEVICE(ip4,ip5,ip6,ip6p) \
+({\
+CGFloat MACRO_TEMP_CONSTANT = 0; \
+if (IS_IPHONE_4_OR_LESS) MACRO_TEMP_CONSTANT = ip4;\
+else if (IS_IPHONE_5) MACRO_TEMP_CONSTANT = ip5;\
+else if (IS_IPHONE_6) MACRO_TEMP_CONSTANT = ip6;\
+else MACRO_TEMP_CONSTANT = ip6p;\
+MACRO_TEMP_CONSTANT;\
+})
+
+//非空判断
+#define kUIAppearanceEnabled        (NSProtocolFromString(@"UIAppearance") != nil)
+
+#define IsNilOrNull(_ref)           (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]))
+
+#define IsDictionaryClass(_ref)     (!IsNilOrNull(_ref) && ([(_ref) isKindOfClass:[NSDictionary class]]))
+
+#define IsArrayClass(_ref)          (!IsNilOrNull(_ref) && ([(_ref) isKindOfClass:[NSArray class]]))
+
+#define IsStrEmpty(_ref)            (IsNilOrNull(_ref) || (![(_ref) isKindOfClass:[NSString class]]) || ([(_ref) isEqualToString:@""]))
+
+#define IsArrEmpty(_ref)            (IsNilOrNull(_ref) || (![(_ref) isKindOfClass:[NSArray class]]) || ([(_ref) count] == 0))
 
 #endif /* PrefixHeader_pch */
