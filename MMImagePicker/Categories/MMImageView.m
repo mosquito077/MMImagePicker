@@ -104,7 +104,6 @@
     }
 }
 
-
 - (id)initWithFrame:(CGRect)frame placeHolderImageName:(NSString *)imageName {
     self = [self initWithFrame:frame];
     if (self) {
@@ -220,18 +219,18 @@
                      }];
 }
 
-- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(YH_ImageViewBorderType)borderType {
+- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(MM_ImageViewBorderType)borderType {
     [self setImageUrl:urlString placeholderImageName:placeholder borderType:borderType borderWidth:CGFLOAT_FOR_DEVICE(2.f, 2.f, 2.f, 3.f)];
 }
 
-- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(YH_ImageViewBorderType)borderType borderWidth:(CGFloat)width {
+- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(MM_ImageViewBorderType)borderType borderWidth:(CGFloat)width {
     [self setImageUrl:urlString placeholderImageName:placeholder borderType:borderType borderWidth:width borderColor:[UIColor whiteColor]];
 }
 
-- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(YH_ImageViewBorderType)borderType borderWidth:(CGFloat)width borderColor:(UIColor *)color {
+- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(MM_ImageViewBorderType)borderType borderWidth:(CGFloat)width borderColor:(UIColor *)color {
     
     UIImage *placeholderImage = placeholder.length>0?[UIImage imageNamed:placeholder]:nil;
-    if (borderType==YH_ImageViewBorderType_Circle && [placeholder isEqualToString:@"moren_head"])
+    if (borderType==MM_ImageViewBorderType_Circle && [placeholder isEqualToString:@"moren_head"])
     {
         static UIImage *defaultHeadPicImage = nil;
         static dispatch_once_t onceToken;
@@ -249,7 +248,7 @@
     [self setImageWithURL:[NSURL URLWithString:urlStr]
               placeholder:placeholderImage
                   options:kNilOptions
-                  manager:(borderType==YH_ImageViewBorderType_Circle)?[MMImageView circleImageManager]:[MMImageView rectangleImageManager]
+                  manager:(borderType == MM_ImageViewBorderType_Circle)?[MMImageView circleImageManager]:[MMImageView rectangleImageManager]
                  progress:nil
                 transform:nil
                completion:nil];

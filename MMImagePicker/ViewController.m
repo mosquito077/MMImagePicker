@@ -15,8 +15,6 @@
 
 @property (strong, nonatomic) UITableView *mainTableView;
 @property (strong, nonatomic) NSMutableArray *picsArray;        //选中的图片数组
-@property (strong, nonatomic) NSMutableArray *originPicsArray;  //未加滤镜的数组
-@property (strong, nonatomic) NSMutableDictionary *filterDicM;
 @property (strong, nonatomic) NSMutableArray *indexArray;
 @property (strong, nonatomic) NSMutableArray <YH_PhotoInfo*> *photoInfoArray;
 
@@ -36,13 +34,6 @@
         _picsArray = [NSMutableArray array];
     }
     return _picsArray;
-}
-
-- (NSMutableArray *)originPicsArray {
-    if (! _originPicsArray) {
-        _originPicsArray = [NSMutableArray array];
-    }
-    return _originPicsArray;
 }
 
 - (NSMutableArray *)indexArray {
@@ -148,14 +139,12 @@
     
     [self.indexArray removeAllObjects];
     [self.picsArray removeAllObjects];
-    [self.originPicsArray removeAllObjects];
     [self.photoInfoArray removeAllObjects];
     
     [self.indexArray addObjectsFromArray:indexArray];
     [self.photoInfoArray addObjectsFromArray:metaData];
     
     [self.picsArray addObjectsFromArray:array];
-    [self.originPicsArray addObjectsFromArray:array];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.mainTableView reloadData];

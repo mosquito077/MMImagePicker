@@ -26,6 +26,8 @@
 		A267172B1F3D89370088204C /* NSString+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A267172A1F3D89370088204C /* NSString+MM.m */; };
 		A267172E1F3DA59A0088204C /* MMAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = A267172D1F3DA59A0088204C /* MMAssistant.m */; };
 		A2EE03E91F3BF1890004C78D /* YH_PhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE03E81F3BF1890004C78D /* YH_PhotoInfo.m */; };
+		A2F2FECE1F3DB067003336D5 /* MMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F2FECD1F3DB067003336D5 /* MMTool.m */; };
+		A2F2FED11F3DB427003336D5 /* UIView+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F2FED01F3DB427003336D5 /* UIView+MM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,10 @@
 		A2EE03E71F3BF1890004C78D /* YH_PhotoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YH_PhotoInfo.h; sourceTree = "<group>"; };
 		A2EE03E81F3BF1890004C78D /* YH_PhotoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YH_PhotoInfo.m; sourceTree = "<group>"; };
 		A2EE03EE1F3C0E350004C78D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A2F2FECC1F3DB067003336D5 /* MMTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTool.h; sourceTree = "<group>"; };
+		A2F2FECD1F3DB067003336D5 /* MMTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTool.m; sourceTree = "<group>"; };
+		A2F2FECF1F3DB427003336D5 /* UIView+MM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MM.h"; sourceTree = "<group>"; };
+		A2F2FED01F3DB427003336D5 /* UIView+MM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MM.m"; sourceTree = "<group>"; };
 		AA2E3F10BE8D3AADF6B9B12C /* Pods-MMImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMImagePicker/Pods-MMImagePicker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,10 +182,14 @@
 				A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */,
 				A26717291F3D89370088204C /* NSString+MM.h */,
 				A267172A1F3D89370088204C /* NSString+MM.m */,
+				A2F2FECF1F3DB427003336D5 /* UIView+MM.h */,
+				A2F2FED01F3DB427003336D5 /* UIView+MM.m */,
 				A26717241F3D832C0088204C /* MMImageView.h */,
 				A26717251F3D832C0088204C /* MMImageView.m */,
 				A267172C1F3DA59A0088204C /* MMAssistant.h */,
 				A267172D1F3DA59A0088204C /* MMAssistant.m */,
+				A2F2FECC1F3DB067003336D5 /* MMTool.h */,
+				A2F2FECD1F3DB067003336D5 /* MMTool.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -311,6 +321,7 @@
 				A21AB6451F3B2CC3004DA5AB /* MM_ImagePickerViewController.m in Sources */,
 				A21AB6421F3B09B7004DA5AB /* UIColor+MM.m in Sources */,
 				A26717261F3D832C0088204C /* MMImageView.m in Sources */,
+				A2F2FED11F3DB427003336D5 /* UIView+MM.m in Sources */,
 				A21AB6391F3AD9E2004DA5AB /* AssetHelper.m in Sources */,
 				A267172E1F3DA59A0088204C /* MMAssistant.m in Sources */,
 				A21AB62F1F3AB99A004DA5AB /* MM_PictureCell.m in Sources */,
@@ -318,6 +329,7 @@
 				A21AB6361F3AD6F4004DA5AB /* ALAsset+MMIPC.m in Sources */,
 				A2EE03E91F3BF1890004C78D /* YH_PhotoInfo.m in Sources */,
 				A21AB6481F3B3AC3004DA5AB /* MMPreviewImageCell.m in Sources */,
+				A2F2FECE1F3DB067003336D5 /* MMTool.m in Sources */,
 				A21AB61A1F3AB65D004DA5AB /* ViewController.m in Sources */,
 				A21AB6171F3AB65D004DA5AB /* AppDelegate.m in Sources */,
 				A21AB6141F3AB65D004DA5AB /* main.m in Sources */,

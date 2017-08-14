@@ -196,6 +196,8 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
     
     WS(weakSelf);
     
+    [self.view showWait];
+    
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
         
         [ASSETHELPER getGroupList:^(NSArray *groups) {
@@ -209,6 +211,8 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                     
                     [weakSelf updateCountLabel];
                     [weakSelf.collectionView reloadData];
+                    
+                    [weakSelf.view hideWait];
                     
                 });
             }];
@@ -535,7 +539,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
     CGSize size = [self calStringSize:text font:[UIFont systemFontOfSize:18.0f]];
     self.titleLabel.text = text;
     self.titleLabel.frame = CGRectMake(12, 0, size.width, kNavigationBarHeight);
-    UIImage *image = [UIImage imageNamed:@"triangle_up"];
+    UIImage *image = [UIImage imageNamed:@"triangle_ic_up"];
     if (isShow) {
         self.selectAlbumButton.hidden = NO;
         self.selectAlbumButton.frame = CGRectMake(CGRectGetMaxX(self.titleLabel.frame)+10, (kNavigationBarHeight-image.size.height)/2, image.size.width, image.size.height);
@@ -802,8 +806,8 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                 }
             }];
             
-            dispatch_queue_t workerQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            dispatch_async(workerQueue, ^{
+            mm_dispatch_execute_in_worker_queue(^{
+                
                 NSURL *assetURL = [asset valueForProperty:ALAssetPropertyAssetURL];
                 BOOL contained = NO;
                 if (self.selectedAssets[assetURL.absoluteString]) {
@@ -812,8 +816,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                     contained = NO;
                 }
                 
-                dispatch_queue_t workerQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-                dispatch_async(workerQueue, ^{
+                mm_dispatch_execute_in_main_queue(^{
                     NSIndexPath *realIndexPath = [weakSelf.collectionView indexPathForCell:weakCell];
                     
                     // 异步后验证是否有效
@@ -824,8 +827,8 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                         [weakCell showSelected:contained animated:NO];
                     }
                 });
-
             });
+
         }
         imageCell.tag = indexPath.row+1200;
         
@@ -844,8 +847,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
         if (self.selectedAssets.count < self.nMaxCount) {
             [self presentViewController:self.imagePickerController animated:YES completion:nil];
         } else {
-            NSLog(@"最多可选择%ld张图片", (long)self.nMaxCount);
-//            [YH_Tool alertMessage:[NSString stringWithFormat:NSLocalizedString(@"最多可选择%ld张图片", nil), (long)self.nMaxCount]];
+            [MMTool alertMessage:[NSString stringWithFormat:@"最多可选择%ld张图片", (long)self.nMaxCount]];
         }
     } else {
         MMImagePickerCell *cell = (MMImagePickerCell*)[collectionView cellForItemAtIndexPath:indexPath];
@@ -911,7 +913,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
             self.selectedAssets[assetUrl.absoluteString] = asset;
             self.lastAccessed = indexPath;
         } else {
-            NSLog(@"最多可选择%ld张图片", (long)self.nMaxCount);
+            [MMTool alertMessage:[NSString stringWithFormat:@"最多可选择%ld张图片", (long)self.nMaxCount]];
             return;
         }
     } else {
@@ -933,7 +935,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
 
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    NSLog(@"正在保存图片...");
+    [MMTool alertWait:@"正在保存图片..."];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     //元数据
@@ -967,9 +969,9 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock =
     ^(NSURL *newURL, NSError *error) {
-//        [YH_Tool hideAlert];
+        [MMTool hideAlert];
         if (error) {
-            NSLog(@"图片保存失败!");
+            [MMTool alertFail:@"图片保存失败!"];
         } else {
             [weakSelf.imagePickerController dismissViewControllerAnimated:YES completion:^{}];
             
@@ -1114,6 +1116,8 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                                 atScrollPosition:UICollectionViewScrollPositionTop
                                         animated:NO];
     
+    [self.view showWait];
+    
     WS(weakSelf);
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
         [ASSETHELPER getGroupList:^(NSArray *groups) {
@@ -1125,6 +1129,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
                     [weakSelf.collectionView reloadData];
+                    [weakSelf.view hideWait];
                 });
             }];
         }];

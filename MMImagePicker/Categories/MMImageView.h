@@ -9,10 +9,10 @@
 #import <YYKit/YYKit.h>
 
 // 边框类型
-typedef NS_ENUM(NSInteger, YH_ImageViewBorderType) {
-    YH_ImageViewBorderType_Rectangle = 0,
-    YH_ImageViewBorderType_Circle,
-    YH_ImageViewBorderType_Unknown = 99
+typedef NS_ENUM(NSInteger, MM_ImageViewBorderType) {
+    MM_ImageViewBorderType_Rectangle = 0,
+    MM_ImageViewBorderType_Circle,
+    MM_ImageViewBorderType_Unknown = 99
 };
 
 typedef void (^ImageBlock)(UIImage *image, NSURL *imageUrl);
@@ -53,11 +53,11 @@ typedef void (^ImageTapBlock)(void);
 
 - (void)setImageUrl:(NSString *)urlString placeholderImage:(UIImage *)placeholder loadWithAimation:(BOOL)animated completed:(ImageBlock)completedBlock;
 
-- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(YH_ImageViewBorderType)borderType;
+- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(MM_ImageViewBorderType)borderType;
 
-- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(YH_ImageViewBorderType)borderType borderWidth:(CGFloat)width;
+- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(MM_ImageViewBorderType)borderType borderWidth:(CGFloat)width;
 
-- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(YH_ImageViewBorderType)borderType borderWidth:(CGFloat)width borderColor:(UIColor *)color;
+- (void)setImageUrl:(NSString *)urlString placeholderImageName:(NSString *)placeholder borderType:(MM_ImageViewBorderType)borderType borderWidth:(CGFloat)width borderColor:(UIColor *)color;
 
 /**
  @brief  用URL加载图片

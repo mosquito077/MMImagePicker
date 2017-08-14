@@ -21,7 +21,6 @@ static CGFloat const kImageButtonTag = 1200;
 
 @end
 
-
 @implementation MM_PictureCell
 
 - (void)awakeFromNib {
@@ -66,11 +65,10 @@ static CGFloat const kImageButtonTag = 1200;
     return self;
 }
 
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self.contentView setHeight:CGRectGetHeight(self.frame)];//确保contentView高度调整了
+    [self.contentView setHeight:CGRectGetHeight(self.frame)];     //确保contentView高度调整了
     self.lineView.frame = CGRectMake(10.f, CGRectGetHeight(self.frame)-1.f, kScreenWidth-10.f, 1.f);
 }
 

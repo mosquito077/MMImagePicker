@@ -16,6 +16,8 @@
 #import "NSString+MM.h"
 #import "MMAssistant.h"
 #import "MMImageView.h"
+#import "UIView+MM.h"
+#import "MMTool.h"
 
 #import <Masonry.h>
 #import <YYKit/YYKit.h>
