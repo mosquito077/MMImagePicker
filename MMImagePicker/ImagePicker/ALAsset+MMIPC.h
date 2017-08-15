@@ -14,3 +14,12 @@
 - (BOOL)isEqual:(id)other;
 
 @end
+
+
+@interface ALAssetsGroup (YOHO)
+
+- (UIImage *)getFirstPhotoImage;
+
+- (UIImage *)getFirstVideoImage;
+
+@end

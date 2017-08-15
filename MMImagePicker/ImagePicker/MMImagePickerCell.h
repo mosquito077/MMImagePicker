@@ -23,10 +23,3 @@
 
 @end
 
-@interface ALAssetsGroup (YOHO)
-
-- (UIImage *)getFirstPhotoImage;
-
-- (UIImage *)getFirstVideoImage;
-
-@end

@@ -16,6 +16,7 @@
 #import "NSString+MM.h"
 #import "MMAssistant.h"
 #import "MMImageView.h"
+#import "ALAsset+MMIPC.h"
 
 #import <Masonry.h>
 #import <YYKit/YYKit.h>
