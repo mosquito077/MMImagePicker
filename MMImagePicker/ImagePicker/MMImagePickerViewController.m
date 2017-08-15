@@ -1,5 +1,5 @@
 //
-//  MM_ImagePickerViewController.m
+//  MMImagePickerViewController.m
 //  MMImagePicker
 //
 //  Created by mosquito on 2017/8/9.
@@ -7,7 +7,7 @@
 //
 
 
-#import "MM_ImagePickerViewController.h"
+#import "MMImagePickerViewController.h"
 #import "MMImagePickerCell.h"
 #import "MMPreviewImageCell.h"
 
@@ -85,7 +85,7 @@
 static NSString *kPropertyToObserve = @"contentOffset";
 static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetChangesContext;
 
-@interface MM_ImagePickerViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface MMImagePickerViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 // picker view
 @property (assign, nonatomic) BOOL isOpenAlbum;
@@ -126,7 +126,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
 
 @end
 
-@implementation MM_ImagePickerViewController
+@implementation MMImagePickerViewController
 
 + (BOOL)yh_designatedUsingXib {
     return NO;
@@ -196,7 +196,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
     
     WS(weakSelf);
     
-    [self.view showWait];
+    [SVProgressHUD show];
     
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
         
@@ -212,7 +212,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                     [weakSelf updateCountLabel];
                     [weakSelf.collectionView reloadData];
                     
-                    [weakSelf.view hideWait];
+                    [SVProgressHUD dismiss];
                     
                 });
             }];
@@ -847,7 +847,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
         if (self.selectedAssets.count < self.nMaxCount) {
             [self presentViewController:self.imagePickerController animated:YES completion:nil];
         } else {
-            [MMTool alertMessage:[NSString stringWithFormat:@"最多可选择%ld张图片", (long)self.nMaxCount]];
+            [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"最多可选择%ld张图片", (long)self.nMaxCount]];
         }
     } else {
         MMImagePickerCell *cell = (MMImagePickerCell*)[collectionView cellForItemAtIndexPath:indexPath];
@@ -913,7 +913,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
             self.selectedAssets[assetUrl.absoluteString] = asset;
             self.lastAccessed = indexPath;
         } else {
-            [MMTool alertMessage:[NSString stringWithFormat:@"最多可选择%ld张图片", (long)self.nMaxCount]];
+            [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"最多可选择%ld张图片", (long)self.nMaxCount]];
             return;
         }
     } else {
@@ -935,7 +935,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
 
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    [MMTool alertWait:@"正在保存图片..."];
+    [SVProgressHUD showInfoWithStatus:@"正在保存图片..."];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     //元数据
@@ -969,9 +969,9 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock =
     ^(NSURL *newURL, NSError *error) {
-        [MMTool hideAlert];
+        [SVProgressHUD dismiss];
         if (error) {
-            [MMTool alertFail:@"图片保存失败!"];
+            [SVProgressHUD showErrorWithStatus:@"图片保存失败!"];
         } else {
             [weakSelf.imagePickerController dismissViewControllerAnimated:YES completion:^{}];
             
@@ -1116,7 +1116,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                                 atScrollPosition:UICollectionViewScrollPositionTop
                                         animated:NO];
     
-    [self.view showWait];
+    [SVProgressHUD show];
     
     WS(weakSelf);
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
@@ -1129,7 +1129,7 @@ static void *kObservingContentOffsetChangesContext = &kObservingContentOffsetCha
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
                     [weakSelf.collectionView reloadData];
-                    [weakSelf.view hideWait];
+                    [SVProgressHUD dismiss];
                 });
             }];
         }];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MM_PictureCell : UITableViewCell
+@interface MMPictureCell : UITableViewCell
 
 @property (copy, nonatomic) void (^tapAddPictureBlock)(void);
 @property (copy, nonatomic) void (^tapPictureInfoBlock)(NSInteger);

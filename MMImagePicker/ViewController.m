@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import "YH_PhotoInfo.h"
-#import "MM_PictureCell.h"
-#import "MM_ImagePickerViewController.h"
+#import "MMPictureCell.h"
+#import "MMImagePickerViewController.h"
+
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource, MMImagePickerControllerDelegate>
 
@@ -84,13 +85,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [MM_PictureCell heightForPictureCell:self.picsArray];
+    return [MMPictureCell heightForPictureCell:self.picsArray];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MM_PictureCell *cell = (MM_PictureCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    MMPictureCell *cell = (MMPictureCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[MM_PictureCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[MMPictureCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         cell.tag = 10000;
     }
@@ -98,7 +99,7 @@
     
     WS(weakSelf);
     cell.tapAddPictureBlock = ^(void){
-        MM_ImagePickerViewController *pickerCtrl = [[MM_ImagePickerViewController alloc] initWithSelectAssets:weakSelf.indexArray selectedPhotoInfo:weakSelf.photoInfoArray];
+        MMImagePickerViewController *pickerCtrl = [[MMImagePickerViewController alloc] initWithSelectAssets:weakSelf.indexArray selectedPhotoInfo:weakSelf.photoInfoArray];
         
         pickerCtrl.delegate = weakSelf;
         pickerCtrl.nMaxCount = 9;
@@ -127,7 +128,7 @@
 }
 
 #pragma mark - MMImagePickerControllerDelegate
-- (void)didSelectPhotosFromMMImagePickerController:(MM_ImagePickerViewController *)picker
+- (void)didSelectPhotosFromMMImagePickerController:(MMImagePickerViewController *)picker
                                             result:(NSArray *)indexArray
                                           metaData:(NSArray<YH_PhotoInfo*> *)metaData
                                             finish:(BOOL)flag {

@@ -14,20 +14,18 @@
 		A21AB61D1F3AB65D004DA5AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21AB61B1F3AB65D004DA5AB /* Main.storyboard */; };
 		A21AB61F1F3AB65D004DA5AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21AB61E1F3AB65D004DA5AB /* Assets.xcassets */; };
 		A21AB6221F3AB65D004DA5AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21AB6201F3AB65D004DA5AB /* LaunchScreen.storyboard */; };
-		A21AB62F1F3AB99A004DA5AB /* MM_PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB62E1F3AB99A004DA5AB /* MM_PictureCell.m */; };
+		A21AB62F1F3AB99A004DA5AB /* MMPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB62E1F3AB99A004DA5AB /* MMPictureCell.m */; };
 		A21AB6361F3AD6F4004DA5AB /* ALAsset+MMIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6351F3AD6F4004DA5AB /* ALAsset+MMIPC.m */; };
 		A21AB6391F3AD9E2004DA5AB /* AssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6381F3AD9E2004DA5AB /* AssetHelper.m */; };
 		A21AB63E1F3B02B1004DA5AB /* MMImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB63D1F3B02B1004DA5AB /* MMImagePickerCell.m */; };
 		A21AB6421F3B09B7004DA5AB /* UIColor+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */; };
-		A21AB6451F3B2CC3004DA5AB /* MM_ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */; };
+		A21AB6451F3B2CC3004DA5AB /* MMImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6441F3B2CC3004DA5AB /* MMImagePickerViewController.m */; };
 		A21AB6481F3B3AC3004DA5AB /* MMPreviewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AB6471F3B3AC3004DA5AB /* MMPreviewImageCell.m */; };
 		A26717261F3D832C0088204C /* MMImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A26717251F3D832C0088204C /* MMImageView.m */; };
 		A26717281F3D87590088204C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26717271F3D87590088204C /* Accelerate.framework */; };
 		A267172B1F3D89370088204C /* NSString+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A267172A1F3D89370088204C /* NSString+MM.m */; };
 		A267172E1F3DA59A0088204C /* MMAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = A267172D1F3DA59A0088204C /* MMAssistant.m */; };
 		A2EE03E91F3BF1890004C78D /* YH_PhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE03E81F3BF1890004C78D /* YH_PhotoInfo.m */; };
-		A2F2FECE1F3DB067003336D5 /* MMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F2FECD1F3DB067003336D5 /* MMTool.m */; };
-		A2F2FED11F3DB427003336D5 /* UIView+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F2FED01F3DB427003336D5 /* UIView+MM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +41,8 @@
 		A21AB61E1F3AB65D004DA5AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A21AB6211F3AB65D004DA5AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A21AB6231F3AB65D004DA5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A21AB62D1F3AB99A004DA5AB /* MM_PictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MM_PictureCell.h; path = ImagePicker/MM_PictureCell.h; sourceTree = "<group>"; };
-		A21AB62E1F3AB99A004DA5AB /* MM_PictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MM_PictureCell.m; path = ImagePicker/MM_PictureCell.m; sourceTree = "<group>"; };
+		A21AB62D1F3AB99A004DA5AB /* MMPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMPictureCell.h; path = ImagePicker/MMPictureCell.h; sourceTree = "<group>"; };
+		A21AB62E1F3AB99A004DA5AB /* MMPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMPictureCell.m; path = ImagePicker/MMPictureCell.m; sourceTree = "<group>"; };
 		A21AB6311F3AD674004DA5AB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		A21AB6341F3AD6F4004DA5AB /* ALAsset+MMIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+MMIPC.h"; sourceTree = "<group>"; };
 		A21AB6351F3AD6F4004DA5AB /* ALAsset+MMIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+MMIPC.m"; sourceTree = "<group>"; };
@@ -55,8 +53,8 @@
 		A21AB63D1F3B02B1004DA5AB /* MMImagePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMImagePickerCell.m; sourceTree = "<group>"; };
 		A21AB6401F3B09B7004DA5AB /* UIColor+MM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MM.h"; sourceTree = "<group>"; };
 		A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MM.m"; sourceTree = "<group>"; };
-		A21AB6431F3B2CC3004DA5AB /* MM_ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MM_ImagePickerViewController.h; path = ImagePicker/MM_ImagePickerViewController.h; sourceTree = "<group>"; };
-		A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MM_ImagePickerViewController.m; path = ImagePicker/MM_ImagePickerViewController.m; sourceTree = "<group>"; };
+		A21AB6431F3B2CC3004DA5AB /* MMImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMImagePickerViewController.h; path = ImagePicker/MMImagePickerViewController.h; sourceTree = "<group>"; };
+		A21AB6441F3B2CC3004DA5AB /* MMImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMImagePickerViewController.m; path = ImagePicker/MMImagePickerViewController.m; sourceTree = "<group>"; };
 		A21AB6461F3B3AC3004DA5AB /* MMPreviewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPreviewImageCell.h; sourceTree = "<group>"; };
 		A21AB6471F3B3AC3004DA5AB /* MMPreviewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPreviewImageCell.m; sourceTree = "<group>"; };
 		A26717241F3D832C0088204C /* MMImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMImageView.h; sourceTree = "<group>"; };
@@ -69,10 +67,6 @@
 		A2EE03E71F3BF1890004C78D /* YH_PhotoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YH_PhotoInfo.h; sourceTree = "<group>"; };
 		A2EE03E81F3BF1890004C78D /* YH_PhotoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YH_PhotoInfo.m; sourceTree = "<group>"; };
 		A2EE03EE1F3C0E350004C78D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		A2F2FECC1F3DB067003336D5 /* MMTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTool.h; sourceTree = "<group>"; };
-		A2F2FECD1F3DB067003336D5 /* MMTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTool.m; sourceTree = "<group>"; };
-		A2F2FECF1F3DB427003336D5 /* UIView+MM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MM.h"; sourceTree = "<group>"; };
-		A2F2FED01F3DB427003336D5 /* UIView+MM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MM.m"; sourceTree = "<group>"; };
 		AA2E3F10BE8D3AADF6B9B12C /* Pods-MMImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMImagePicker/Pods-MMImagePicker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,10 +115,10 @@
 			children = (
 				A21AB63F1F3B0999004DA5AB /* Categories */,
 				A21AB6291F3AB956004DA5AB /* ImagePicker */,
-				A21AB62D1F3AB99A004DA5AB /* MM_PictureCell.h */,
-				A21AB62E1F3AB99A004DA5AB /* MM_PictureCell.m */,
-				A21AB6431F3B2CC3004DA5AB /* MM_ImagePickerViewController.h */,
-				A21AB6441F3B2CC3004DA5AB /* MM_ImagePickerViewController.m */,
+				A21AB62D1F3AB99A004DA5AB /* MMPictureCell.h */,
+				A21AB62E1F3AB99A004DA5AB /* MMPictureCell.m */,
+				A21AB6431F3B2CC3004DA5AB /* MMImagePickerViewController.h */,
+				A21AB6441F3B2CC3004DA5AB /* MMImagePickerViewController.m */,
 				A21AB6151F3AB65D004DA5AB /* AppDelegate.h */,
 				A21AB6161F3AB65D004DA5AB /* AppDelegate.m */,
 				A21AB6181F3AB65D004DA5AB /* ViewController.h */,
@@ -182,14 +176,10 @@
 				A21AB6411F3B09B7004DA5AB /* UIColor+MM.m */,
 				A26717291F3D89370088204C /* NSString+MM.h */,
 				A267172A1F3D89370088204C /* NSString+MM.m */,
-				A2F2FECF1F3DB427003336D5 /* UIView+MM.h */,
-				A2F2FED01F3DB427003336D5 /* UIView+MM.m */,
 				A26717241F3D832C0088204C /* MMImageView.h */,
 				A26717251F3D832C0088204C /* MMImageView.m */,
 				A267172C1F3DA59A0088204C /* MMAssistant.h */,
 				A267172D1F3DA59A0088204C /* MMAssistant.m */,
-				A2F2FECC1F3DB067003336D5 /* MMTool.h */,
-				A2F2FECD1F3DB067003336D5 /* MMTool.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -318,18 +308,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21AB63E1F3B02B1004DA5AB /* MMImagePickerCell.m in Sources */,
-				A21AB6451F3B2CC3004DA5AB /* MM_ImagePickerViewController.m in Sources */,
+				A21AB6451F3B2CC3004DA5AB /* MMImagePickerViewController.m in Sources */,
 				A21AB6421F3B09B7004DA5AB /* UIColor+MM.m in Sources */,
 				A26717261F3D832C0088204C /* MMImageView.m in Sources */,
-				A2F2FED11F3DB427003336D5 /* UIView+MM.m in Sources */,
 				A21AB6391F3AD9E2004DA5AB /* AssetHelper.m in Sources */,
 				A267172E1F3DA59A0088204C /* MMAssistant.m in Sources */,
-				A21AB62F1F3AB99A004DA5AB /* MM_PictureCell.m in Sources */,
+				A21AB62F1F3AB99A004DA5AB /* MMPictureCell.m in Sources */,
 				A267172B1F3D89370088204C /* NSString+MM.m in Sources */,
 				A21AB6361F3AD6F4004DA5AB /* ALAsset+MMIPC.m in Sources */,
 				A2EE03E91F3BF1890004C78D /* YH_PhotoInfo.m in Sources */,
 				A21AB6481F3B3AC3004DA5AB /* MMPreviewImageCell.m in Sources */,
-				A2F2FECE1F3DB067003336D5 /* MMTool.m in Sources */,
 				A21AB61A1F3AB65D004DA5AB /* ViewController.m in Sources */,
 				A21AB6171F3AB65D004DA5AB /* AppDelegate.m in Sources */,
 				A21AB6141F3AB65D004DA5AB /* main.m in Sources */,

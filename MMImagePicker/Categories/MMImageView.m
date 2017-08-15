@@ -157,14 +157,14 @@
     [super setImage:image];
 }
 
--(NSString*)preprocessImageUrlByScale:(NSString*)url {
+- (NSString *)preprocessImageUrlByScale:(NSString*)url {
     if (IsStrEmpty(url)) {
         return @"";
     }
     return [url validImageURLWithWidth:self.frame.size.width height:self.frame.size.height mode:2];
 }
 
--(void)setImageUrl:(NSString *)urlString {
+- (void)setImageUrl:(NSString *)urlString {
     [self setImageUrl:urlString placeholderImage:nil];
 }
 

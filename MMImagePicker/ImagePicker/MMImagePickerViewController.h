@@ -1,5 +1,5 @@
 //
-//  MM_ImagePickerViewController.h
+//  MMImagePickerViewController.h
 //  MMImagePicker
 //
 //  Created by mosquito on 2017/8/9.
@@ -21,7 +21,7 @@
 
 @protocol MMImagePickerControllerDelegate;
 
-@interface MM_ImagePickerViewController : UIViewController
+@interface MMImagePickerViewController : UIViewController
 
 @property (weak, nonatomic) id<MMImagePickerControllerDelegate> delegate;
 
@@ -44,15 +44,15 @@
 
 @optional
 
-- (void)didSelectPhotosFromMMImagePickerController:(MM_ImagePickerViewController *)picker
+- (void)didSelectPhotosFromMMImagePickerController:(MMImagePickerViewController *)picker
                                             result:(NSArray<ALAsset*>*)indexArray
                                             finish:(BOOL)flag;
 
-- (void)didSelectPhotosFromMMImagePickerController:(MM_ImagePickerViewController *)picker
+- (void)didSelectPhotosFromMMImagePickerController:(MMImagePickerViewController *)picker
                                             result:(NSArray<ALAsset*>*)indexArray
                                           metaData:(NSArray<YH_PhotoInfo*>*)metaData
                                             finish:(BOOL)flag;
 
-- (void)didCancelMMImagePickerController:(MM_ImagePickerViewController *)picker;
+- (void)didCancelMMImagePickerController:(MMImagePickerViewController *)picker;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 mosquito. All rights reserved.
 //
 
-#import "MM_PictureCell.h"
+#import "MMPictureCell.h"
 #import "YH_PhotoInfo.h"
 #import "AssetHelper.h"
 
@@ -14,14 +14,14 @@ static CGFloat const kLeftSpace = 10.0f;
 static CGFloat const kImageViewMiddleEdge = 13.0f;
 static CGFloat const kImageButtonTag = 1200;
 
-@interface MM_PictureCell()
+@interface MMPictureCell()
 
 @property (nonatomic, assign) CGFloat imageViewSize;
 @property (nonatomic, strong) UIView *lineView;
 
 @end
 
-@implementation MM_PictureCell
+@implementation MMPictureCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
