@@ -10,9 +10,10 @@
 #import "YH_PhotoInfo.h"
 #import "MMPictureCell.h"
 #import "MMImagePickerViewController.h"
+#import "PBViewController.h"
 
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource, MMImagePickerControllerDelegate>
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource, MMImagePickerControllerDelegate, PBViewControllerDelegate, PBViewControllerDataSource>
 
 @property (strong, nonatomic) UITableView *mainTableView;
 @property (strong, nonatomic) NSMutableArray *picsArray;        //选中的图片数组
@@ -119,13 +120,50 @@
         }
         [weakSelf.mainTableView reloadData];
     };
+    
+    cell.tapPictureInfoBlock = ^(NSInteger num) {
+        PBViewController *pbVC = [[PBViewController alloc] init];
+        pbVC.blurBackground = NO;
+        pbVC.pb_delegate = self;
+        pbVC.pb_dataSource = self;
+        pbVC.pb_startPage = num;
+        [self presentViewController:pbVC animated:YES completion:nil];
+    };
+    
     return cell;
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
+
+#pragma mark - PBViewControllerDataSource
+
+- (NSInteger)numberOfPagesInViewController:(PBViewController *)viewController {
+    return self.picsArray.count;
+}
+
+- (UIImage *)viewController:(PBViewController *)viewController imageForPageAtIndex:(NSInteger)index {
+    UIImage *image = [_picsArray objectAtIndex:index];
+    return image;
+}
+
+- (UIView *)thumbViewForPageAtIndex:(NSInteger)index {
+    return nil;
+}
+
+#pragma mark - PBViewControllerDelegate
+
+- (void)viewController:(PBViewController *)viewController didSingleTapedPageAtIndex:(NSInteger)index presentedImage:(UIImage *)presentedImage {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)viewController:(PBViewController *)viewController didLongPressedPageAtIndex:(NSInteger)index presentedImage:(UIImage *)presentedImage {
+    NSLog(@"didLongPressedPageAtIndex: %@", @(index));
+}
+
 
 #pragma mark - MMImagePickerControllerDelegate
 - (void)didSelectPhotosFromMMImagePickerController:(MMImagePickerViewController *)picker
